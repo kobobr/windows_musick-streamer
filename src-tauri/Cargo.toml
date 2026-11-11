@@ -1,0 +1,54 @@
+[package]
+name = "network-audio-router-windows"
+version = "0.1.0"
+description = "Network Audio Router for Windows"
+authors = ["NARfW"]
+license = ""
+repository = ""
+edition = "2021"
+
+[lib]
+name = "narfw_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.5", features = [] }
+
+[dependencies]
+aes = "0.8"
+alac-encoder = "0.3"
+base64 = "0.22"
+cbc = { version = "0.1", features = ["alloc"] }
+chacha20poly1305 = "0.10"
+cpal = "0.16"
+ed25519-dalek = { version = "2", features = ["rand_core"] }
+hkdf = "0.12"
+if-addrs = "0.15.0"
+mdns-sd = "0.20.0"
+num-bigint = "0.4"
+num-traits = "0.2"
+plist = "1.9"
+rand = "0.8"
+rsa = "0.9"
+rust_cast = "0.21.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha1 = "0.10"
+sha2 = "0.10"
+tauri = { version = "2.11", features = ["tray-icon"] }
+thiserror = "2"
+windows = { version = "0.62", features = [
+  "Win32_Foundation",
+  "Win32_Media_Audio",
+  "Win32_Media_KernelStreaming",
+  "Win32_Security",
+  "Win32_System_Com",
+  "Win32_System_Com_StructuredStorage",
+  "Win32_System_Memory",
+  "Win32_System_Threading",
+  "Win32_System_Variant",
+  "Win32_UI_Input_KeyboardAndMouse",
+  "Win32_UI_WindowsAndMessaging",
+] }
+windows-core = "0.62"
+x25519-dalek = { version = "2", features = ["static_secrets"] }
